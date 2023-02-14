@@ -37,7 +37,7 @@ let shapes = [];
 
 function generateSvg(answers) {
   shapes.forEach(shape => shape.setColor(answers.shapeColor));
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">${shapes.map(shape => shape.toSvg()).join('')}<text x="150" y="100" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text></svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">${shapes.map(shape => shape.toSvg()).join('')}<text x="150" y="115" font-size="60" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text></svg>`;
   fs.writeFile('logo.svg', svg, (err) => {
     if (err) throw err;
     console.log('The file has been saved!');
